@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31516CC325C6D819001CF6AE /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31516CC225C6D819001CF6AE /* AppView.swift */; };
-		31516CC725C6D85D001CF6AE /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31516CC625C6D85D001CF6AE /* AppTab.swift */; };
 		31516CDC25C6F9F9001CF6AE /* Color in Frameworks */ = {isa = PBXBuildFile; productRef = 31516CDB25C6F9F9001CF6AE /* Color */; };
 		31516CDE25C6F9F9001CF6AE /* Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 31516CDD25C6F9F9001CF6AE /* Preview */; };
 		31516CE025C6F9F9001CF6AE /* Shape in Frameworks */ = {isa = PBXBuildFile; productRef = 31516CDF25C6F9F9001CF6AE /* Shape */; };
@@ -29,8 +27,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		31516CC225C6D819001CF6AE /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
-		31516CC625C6D85D001CF6AE /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
 		31516CD225C6F9E5001CF6AE /* Color */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Color; sourceTree = "<group>"; };
 		31516CD525C6F9EA001CF6AE /* Shape */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shape; sourceTree = "<group>"; };
 		31516CD825C6F9EE001CF6AE /* Preview */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Preview; sourceTree = "<group>"; };
@@ -109,8 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				31C9904C25C6CA9200E4A48E /* App.swift */,
-				31516CC625C6D85D001CF6AE /* AppTab.swift */,
-				31516CC225C6D819001CF6AE /* AppView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -237,9 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31516CC325C6D819001CF6AE /* AppView.swift in Sources */,
 				31C9904D25C6CA9200E4A48E /* App.swift in Sources */,
-				31516CC725C6D85D001CF6AE /* AppTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

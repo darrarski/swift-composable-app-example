@@ -6,7 +6,7 @@ struct App: SwiftUI.App {
   var body: some Scene {
     WindowGroup {
       if !isRunningTests {
-        AppView()
+        Text("Hello, World!")
       }
     }
   }

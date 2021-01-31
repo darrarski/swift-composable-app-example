@@ -10,11 +10,11 @@ public struct ShapeView: View {
 
   public var body: some View {
     WithViewStore(store) { viewStore in
-      HStack {
-        Spacer()
+      VStack {
+        HStack {
+          Spacer()
 
-        Button(action: { viewStore.send(.didSelectType(.square)) }) {
-          VStack {
+          Button(action: { viewStore.send(.didSelectType(.square)) }) {
             Rectangle()
               .stroke(lineWidth: 4)
               .frame(width: 50, height: 50)
@@ -26,16 +26,12 @@ public struct ShapeView: View {
                   EmptyView()
                 }
               })
-
-            Text("Square")
+              .padding()
           }
-          .padding()
-        }
 
-        Spacer()
+          Spacer()
 
-        Button(action: { viewStore.send(.didSelectType(.circle)) }) {
-          VStack {
+          Button(action: { viewStore.send(.didSelectType(.circle)) }) {
             Circle()
               .stroke(lineWidth: 4)
               .frame(width: 50, height: 50)
@@ -47,13 +43,16 @@ public struct ShapeView: View {
                   EmptyView()
                 }
               })
-
-            Text("Circle")
+              .padding()
           }
-          .padding()
+
+          Spacer()
         }
 
-        Spacer()
+        Button(action: { viewStore.send(.apply) }) {
+          Text("Apply")
+            .padding()
+        }
       }
       .padding()
     }

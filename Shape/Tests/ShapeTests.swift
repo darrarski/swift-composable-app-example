@@ -22,4 +22,16 @@ final class ShapeTests: XCTestCase {
       }
     )
   }
+
+  func testApply() {
+    let store = TestStore(
+      initialState: ShapeState(type: .square),
+      reducer: shapeReducer,
+      environment: ()
+    )
+
+    store.assert(
+      .send(.apply)
+    )
+  }
 }

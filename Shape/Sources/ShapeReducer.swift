@@ -5,5 +5,8 @@ public let shapeReducer = Reducer<ShapeState, ShapeAction, Void> { state, action
   case let .didSelectType(value):
     state.type = value
     return .none
+
+  case .apply:
+    return .none
   }
 }

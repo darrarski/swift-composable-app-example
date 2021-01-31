@@ -1,3 +1,10 @@
 import ComposableArchitecture
 
-public let previewReducer = Reducer<PreviewState, PreviewAction, Void>.empty
+public let previewReducer = Reducer<PreviewState, PreviewAction, Void> { state, action, _ in
+  switch action {
+  case .reset:
+    state.color = nil
+    state.shape = nil
+    return .none
+  }
+}

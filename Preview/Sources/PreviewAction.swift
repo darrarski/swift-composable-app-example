@@ -1,1 +1,3 @@
-public enum PreviewAction: Equatable {}
+public enum PreviewAction: Equatable {
+  case reset
+}

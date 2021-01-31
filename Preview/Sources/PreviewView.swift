@@ -14,24 +14,31 @@ public struct PreviewView: View {
     WithViewStore(store) { viewStore in
       if let color = viewStore.color,
          let shape = viewStore.shape {
-        Group {
-          switch shape {
-          case .circle:
-            Circle()
+        VStack {
+          Group {
+            switch shape {
+            case .circle:
+              Circle()
 
-          case .square:
-            Rectangle()
-              .aspectRatio(1, contentMode: .fit)
+            case .square:
+              Rectangle()
+                .aspectRatio(1, contentMode: .fit)
+            }
+          }
+          .padding()
+          .foregroundColor(Color(
+            .displayP3,
+            red: color.red,
+            green: color.green,
+            blue: color.blue,
+            opacity: 1
+          ))
+
+          Button(action: { viewStore.send(.reset) }) {
+            Text("Reset")
+              .padding()
           }
         }
-        .padding()
-        .foregroundColor(Color(
-          .displayP3,
-          red: color.red,
-          green: color.green,
-          blue: color.blue,
-          opacity: 1
-        ))
       } else {
         VStack {
           Text("No preview").font(.title)

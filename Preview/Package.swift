@@ -12,11 +12,19 @@ let package = Package(
       targets: ["Preview"]
     )
   ],
-  dependencies: [],
+  dependencies: [
+    .package(path: "../Common"),
+    .package(path: "../Color"),
+    .package(path: "../Shape")
+  ],
   targets: [
     .target(
       name: "Preview",
-      dependencies: [],
+      dependencies: [
+        "Common",
+        "Color",
+        "Shape"
+      ],
       path: "Sources"
     ),
     .testTarget(

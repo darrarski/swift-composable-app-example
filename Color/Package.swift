@@ -12,11 +12,13 @@ let package = Package(
       targets: ["Color"]
     )
   ],
-  dependencies: [],
+  dependencies: [
+    .package(path: "../Common")
+  ],
   targets: [
     .target(
       name: "Color",
-      dependencies: [],
+      dependencies: ["Common"],
       path: "Sources"
     ),
     .testTarget(

@@ -8,19 +8,21 @@ import Tabs
 
 @main
 struct App: SwiftUI.App {
+  let store = Store(
+    initialState: TabsState(
+      selectedTab: .preview,
+      color: ColorState(rgb: RGBColor(0.5, 0.5, 0.5)),
+      shape: ShapeState(type: .square),
+      preview: PreviewState()
+    ),
+    reducer: tabsReducer,
+    environment: ()
+  )
+
   var body: some Scene {
     WindowGroup {
       if !isRunningTests {
-        TabsView(store: Store(
-          initialState: TabsState(
-            selectedTab: .preview,
-            color: ColorState(rgb: RGBColor(0.5, 0.5, 0.5)),
-            shape: ShapeState(type: .square),
-            preview: PreviewState()
-          ),
-          reducer: tabsReducer,
-          environment: ()
-        ))
+        TabsView(store: store)
       }
     }
   }

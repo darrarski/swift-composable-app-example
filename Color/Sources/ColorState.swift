@@ -1,11 +1,7 @@
 public struct ColorState: Equatable {
-  public init(red: Double, green: Double, blue: Double) {
-    self.red = red
-    self.green = green
-    self.blue = blue
+  public init(rgb: RGBColor) {
+    self.rgb = rgb
   }
 
-  public var red: Double
-  public var green: Double
-  public var blue: Double
+  public var rgb: RGBColor
 }

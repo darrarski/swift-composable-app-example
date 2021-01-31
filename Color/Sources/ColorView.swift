@@ -15,7 +15,7 @@ public struct ColorView: View {
 
         Slider(
           value: viewStore.binding(
-            get: \.red,
+            get: \.rgb.red,
             send: ColorAction.didUpdateRed
           ),
           in: (0...1)
@@ -26,7 +26,7 @@ public struct ColorView: View {
 
         Slider(
           value: viewStore.binding(
-            get: \.green,
+            get: \.rgb.green,
             send: ColorAction.didUpdateGreen
           ),
           in: (0...1)
@@ -37,7 +37,7 @@ public struct ColorView: View {
 
         Slider(
           value: viewStore.binding(
-            get: \.blue,
+            get: \.rgb.blue,
             send: ColorAction.didUpdateBlue
           ),
           in: (0...1)
@@ -48,9 +48,9 @@ public struct ColorView: View {
       .border(
         Color(
           .displayP3,
-          red: viewStore.red,
-          green: viewStore.green,
-          blue: viewStore.blue,
+          red: viewStore.rgb.red,
+          green: viewStore.rgb.green,
+          blue: viewStore.rgb.blue,
           opacity: 1
         ),
         width: 8
@@ -63,7 +63,7 @@ public struct ColorView: View {
 struct ColorView_Previews: PreviewProvider {
   static var previews: some View {
     ColorView(store: Store(
-      initialState: ColorState(red: 0.5, green: 0.5, blue: 0.5),
+      initialState: ColorState(rgb: RGBColor(0.5, 0.5, 0.5)),
       reducer: colorReducer,
       environment: ()
     ))

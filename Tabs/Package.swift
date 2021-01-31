@@ -13,12 +13,20 @@ let package = Package(
     )
   ],
   dependencies: [
-    .package(path: "../Common")
+    .package(path: "../Common"),
+    .package(path: "../Color"),
+    .package(path: "../Shape"),
+    .package(path: "../Preview")
   ],
   targets: [
     .target(
       name: "Tabs",
-      dependencies: ["Common"],
+      dependencies: [
+        "Common",
+        "Color",
+        "Shape",
+        "Preview"
+      ],
       path: "Sources"
     ),
     .testTarget(

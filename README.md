@@ -4,6 +4,10 @@
 ![platform: iOS](https://img.shields.io/badge/platform-iOS-blue.svg)
 ![deployment target: iOS 14](https://img.shields.io/badge/deployment%20target-iOS%2014-blueviolet)
 
+|1️⃣ Adjust color|2️⃣ Select shape|3️⃣ Preview result|
+|:--|:--|:--|
+|![Color screen](Misc/color_screen.png)|![Shape screen](Misc/shape_screen.png)|![Preview screen](Misc/preview_screen.png)|
+
 ## 📝 Description
 
 _TBD_

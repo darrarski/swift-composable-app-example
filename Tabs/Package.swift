@@ -36,7 +36,8 @@ let package = Package(
         "Tabs",
         "Testing"
       ],
-      path: "Tests"
+      path: "Tests",
+      exclude: ["__Snapshots__"]
     )
   ]
 )

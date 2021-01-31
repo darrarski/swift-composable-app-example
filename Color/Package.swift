@@ -28,7 +28,8 @@ let package = Package(
         "Color",
         "Testing"
       ],
-      path: "Tests"
+      path: "Tests",
+      exclude: ["__Snapshots__"]
     )
   ]
 )

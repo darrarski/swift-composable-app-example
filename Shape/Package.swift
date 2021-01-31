@@ -12,11 +12,13 @@ let package = Package(
       targets: ["Shape"]
     )
   ],
-  dependencies: [],
+  dependencies: [
+    .package(path: "../Common")
+  ],
   targets: [
     .target(
       name: "Shape",
-      dependencies: [],
+      dependencies: ["Common"],
       path: "Sources"
     ),
     .testTarget(

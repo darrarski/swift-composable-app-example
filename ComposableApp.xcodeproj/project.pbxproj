@@ -33,6 +33,7 @@
 		31516CD825C6F9EE001CF6AE /* Preview */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Preview; sourceTree = "<group>"; };
 		31516CE325C6FC91001CF6AE /* Common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Common; sourceTree = "<group>"; };
 		31516CFC25C717CC001CF6AE /* Tabs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tabs; sourceTree = "<group>"; };
+		31A8B50525C72D5B00CA3A14 /* Testing */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Testing; sourceTree = "<group>"; };
 		31C9904925C6CA9200E4A48E /* ComposableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C9904C25C6CA9200E4A48E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		31C9905025C6CA9200E4A48E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 				31516CD225C6F9E5001CF6AE /* Color */,
 				31516CD525C6F9EA001CF6AE /* Shape */,
 				31516CD825C6F9EE001CF6AE /* Preview */,
+				31A8B50525C72D5B00CA3A14 /* Testing */,
 				31C9904A25C6CA9200E4A48E /* Products */,
 				31516C9F25C6D005001CF6AE /* Frameworks */,
 			);

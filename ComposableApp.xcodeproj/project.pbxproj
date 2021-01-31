@@ -11,6 +11,7 @@
 		31516CDE25C6F9F9001CF6AE /* Preview in Frameworks */ = {isa = PBXBuildFile; productRef = 31516CDD25C6F9F9001CF6AE /* Preview */; };
 		31516CE025C6F9F9001CF6AE /* Shape in Frameworks */ = {isa = PBXBuildFile; productRef = 31516CDF25C6F9F9001CF6AE /* Shape */; };
 		31516CE725C6FCB6001CF6AE /* Common in Frameworks */ = {isa = PBXBuildFile; productRef = 31516CE625C6FCB6001CF6AE /* Common */; };
+		31516D0025C717DE001CF6AE /* Tabs in Frameworks */ = {isa = PBXBuildFile; productRef = 31516CFF25C717DE001CF6AE /* Tabs */; };
 		31C9904D25C6CA9200E4A48E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C9904C25C6CA9200E4A48E /* App.swift */; };
 		31C9905125C6CA9200E4A48E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31C9905025C6CA9200E4A48E /* Assets.xcassets */; };
 		31C9905F25C6CA9300E4A48E /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C9905E25C6CA9300E4A48E /* AppTests.swift */; };
@@ -31,6 +32,7 @@
 		31516CD525C6F9EA001CF6AE /* Shape */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shape; sourceTree = "<group>"; };
 		31516CD825C6F9EE001CF6AE /* Preview */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Preview; sourceTree = "<group>"; };
 		31516CE325C6FC91001CF6AE /* Common */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Common; sourceTree = "<group>"; };
+		31516CFC25C717CC001CF6AE /* Tabs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tabs; sourceTree = "<group>"; };
 		31C9904925C6CA9200E4A48E /* ComposableApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComposableApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C9904C25C6CA9200E4A48E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		31C9905025C6CA9200E4A48E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			files = (
 				31516CE025C6F9F9001CF6AE /* Shape in Frameworks */,
 				31516CDC25C6F9F9001CF6AE /* Color in Frameworks */,
+				31516D0025C717DE001CF6AE /* Tabs in Frameworks */,
 				31516CDE25C6F9F9001CF6AE /* Preview in Frameworks */,
 				31516CE725C6FCB6001CF6AE /* Common in Frameworks */,
 			);
@@ -74,6 +77,7 @@
 			children = (
 				31C9904B25C6CA9200E4A48E /* App */,
 				31516CE325C6FC91001CF6AE /* Common */,
+				31516CFC25C717CC001CF6AE /* Tabs */,
 				31516CD225C6F9E5001CF6AE /* Color */,
 				31516CD525C6F9EA001CF6AE /* Shape */,
 				31516CD825C6F9EE001CF6AE /* Preview */,
@@ -148,6 +152,7 @@
 				31516CDD25C6F9F9001CF6AE /* Preview */,
 				31516CDF25C6F9F9001CF6AE /* Shape */,
 				31516CE625C6FCB6001CF6AE /* Common */,
+				31516CFF25C717DE001CF6AE /* Tabs */,
 			);
 			productName = App;
 			productReference = 31C9904925C6CA9200E4A48E /* ComposableApp.app */;
@@ -502,6 +507,10 @@
 		31516CE625C6FCB6001CF6AE /* Common */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Common;
+		};
+		31516CFF25C717DE001CF6AE /* Tabs */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Tabs;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

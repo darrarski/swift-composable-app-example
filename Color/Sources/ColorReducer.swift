@@ -13,5 +13,8 @@ public let colorReducer = Reducer<ColorState, ColorAction, Void> { state, action
   case let .didUpdateBlue(value):
     state.rgb.blue = max(0, min(1, value))
     return .none
+
+  case .apply:
+    return .none
   }
 }

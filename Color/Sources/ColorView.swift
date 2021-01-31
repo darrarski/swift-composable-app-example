@@ -10,52 +10,59 @@ public struct ColorView: View {
 
   public var body: some View {
     WithViewStore(store) { viewStore in
-      VStack(alignment: .leading) {
-        Text("Red")
+      VStack {
+        VStack(alignment: .leading) {
+          Text("Red")
 
-        Slider(
-          value: viewStore.binding(
-            get: \.rgb.red,
-            send: ColorAction.didUpdateRed
+          Slider(
+            value: viewStore.binding(
+              get: \.rgb.red,
+              send: ColorAction.didUpdateRed
+            ),
+            in: (0...1)
+          )
+          .accentColor(.red)
+
+          Text("Green")
+
+          Slider(
+            value: viewStore.binding(
+              get: \.rgb.green,
+              send: ColorAction.didUpdateGreen
+            ),
+            in: (0...1)
+          )
+          .accentColor(.green)
+
+          Text("Blue")
+
+          Slider(
+            value: viewStore.binding(
+              get: \.rgb.blue,
+              send: ColorAction.didUpdateBlue
+            ),
+            in: (0...1)
+          )
+          .accentColor(.blue)
+        }
+        .padding()
+        .border(
+          Color(
+            .displayP3,
+            red: viewStore.rgb.red,
+            green: viewStore.rgb.green,
+            blue: viewStore.rgb.blue,
+            opacity: 1
           ),
-          in: (0...1)
+          width: 8
         )
-        .accentColor(.red)
+        .padding()
 
-        Text("Green")
-
-        Slider(
-          value: viewStore.binding(
-            get: \.rgb.green,
-            send: ColorAction.didUpdateGreen
-          ),
-          in: (0...1)
-        )
-        .accentColor(.green)
-
-        Text("Blue")
-
-        Slider(
-          value: viewStore.binding(
-            get: \.rgb.blue,
-            send: ColorAction.didUpdateBlue
-          ),
-          in: (0...1)
-        )
-        .accentColor(.blue)
+        Button(action: { viewStore.send(.apply) }) {
+          Text("Apply")
+            .padding()
+        }
       }
-      .padding()
-      .border(
-        Color(
-          .displayP3,
-          red: viewStore.rgb.red,
-          green: viewStore.rgb.green,
-          blue: viewStore.rgb.blue,
-          opacity: 1
-        ),
-        width: 8
-      )
-      .padding()
     }
   }
 }

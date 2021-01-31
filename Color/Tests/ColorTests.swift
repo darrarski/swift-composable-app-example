@@ -51,4 +51,16 @@ final class ColorTests: XCTestCase {
       }
     )
   }
+
+  func testApply() {
+    let store = TestStore(
+      initialState: ColorState(rgb: RGBColor(0, 0, 0)),
+      reducer: colorReducer,
+      environment: ()
+    )
+
+    store.assert(
+      .send(.apply)
+    )
+  }
 }

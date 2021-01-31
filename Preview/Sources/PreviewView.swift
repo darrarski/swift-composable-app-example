@@ -22,9 +22,9 @@ public struct PreviewView: View {
 
             case .square:
               Rectangle()
-                .aspectRatio(1, contentMode: .fit)
             }
           }
+          .aspectRatio(1, contentMode: .fit)
           .padding()
           .foregroundColor(Color(
             .displayP3,

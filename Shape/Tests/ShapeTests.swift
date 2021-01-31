@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import Testing
 import XCTest
 @testable import Shape
 
@@ -32,6 +33,35 @@ final class ShapeTests: XCTestCase {
 
     store.assert(
       .send(.apply)
+    )
+  }
+
+  func testPreviewSnapshot() {
+    assertSnapshot(
+      matching: ShapeView_Previews.previews,
+      layout: .device(config: .iPhoneXr)
+    )
+  }
+
+  func testSquareSnapshot() {
+    assertSnapshot(
+      matching: ShapeView(store: Store(
+        initialState: ShapeState(type: .square),
+        reducer: .empty,
+        environment: ()
+      )),
+      layout: .device(config: .iPhoneXr)
+    )
+  }
+
+  func testCircleSnapshot() {
+    assertSnapshot(
+      matching: ShapeView(store: Store(
+        initialState: ShapeState(type: .circle),
+        reducer: .empty,
+        environment: ()
+      )),
+      layout: .device(config: .iPhoneXr)
     )
   }
 }

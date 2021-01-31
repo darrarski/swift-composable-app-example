@@ -13,7 +13,8 @@ let package = Package(
     )
   ],
   dependencies: [
-    .package(path: "../Common")
+    .package(path: "../Common"),
+    .package(path: "../Testing")
   ],
   targets: [
     .target(
@@ -23,7 +24,10 @@ let package = Package(
     ),
     .testTarget(
       name: "ShapeTests",
-      dependencies: ["Shape"],
+      dependencies: [
+        "Shape",
+        "Testing"
+      ],
       path: "Tests"
     )
   ]

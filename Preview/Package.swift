@@ -15,7 +15,8 @@ let package = Package(
   dependencies: [
     .package(path: "../Common"),
     .package(path: "../Color"),
-    .package(path: "../Shape")
+    .package(path: "../Shape"),
+    .package(path: "../Testing")
   ],
   targets: [
     .target(
@@ -29,7 +30,10 @@ let package = Package(
     ),
     .testTarget(
       name: "PreviewTests",
-      dependencies: ["Preview"],
+      dependencies: [
+        "Preview",
+        "Testing"
+      ],
       path: "Tests"
     )
   ]

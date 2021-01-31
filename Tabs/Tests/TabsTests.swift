@@ -2,6 +2,7 @@ import Color
 import ComposableArchitecture
 import Preview
 import Shape
+import Testing
 import XCTest
 @testable import Tabs
 
@@ -66,6 +67,61 @@ final class TabsTests: XCTestCase {
       .send(.shape(.apply)) {
         $0.preview.shape = .square
       }
+    )
+  }
+
+  func testPreviewSnapshot() {
+    assertSnapshot(
+      matching: TabsView_Previews.previews,
+      layout: .device(config: .iPhoneXr)
+    )
+  }
+
+  func testColorTabSnapshot() {
+    assertSnapshot(
+      matching: TabsView(store: Store(
+        initialState: TabsState(
+          selectedTab: .color,
+          color: ColorState(rgb: RGBColor(0.5, 0.5, 0.5)),
+          shape: ShapeState(type: .circle),
+          preview: PreviewState()
+        ),
+        reducer: .empty,
+        environment: ()
+      )),
+      layout: .device(config: .iPhoneXr)
+    )
+  }
+
+  func testShapeTabSnapshot() {
+    assertSnapshot(
+      matching: TabsView(store: Store(
+        initialState: TabsState(
+          selectedTab: .shape,
+          color: ColorState(rgb: RGBColor(0.5, 0.5, 0.5)),
+          shape: ShapeState(type: .circle),
+          preview: PreviewState()
+        ),
+        reducer: .empty,
+        environment: ()
+      )),
+      layout: .device(config: .iPhoneXr)
+    )
+  }
+
+  func testPreviewTabSnapshot() {
+    assertSnapshot(
+      matching: TabsView(store: Store(
+        initialState: TabsState(
+          selectedTab: .preview,
+          color: ColorState(rgb: RGBColor(0.5, 0.5, 0.5)),
+          shape: ShapeState(type: .circle),
+          preview: PreviewState()
+        ),
+        reducer: .empty,
+        environment: ()
+      )),
+      layout: .device(config: .iPhoneXr)
     )
   }
 }

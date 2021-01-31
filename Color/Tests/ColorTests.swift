@@ -1,4 +1,5 @@
 import ComposableArchitecture
+import Testing
 import XCTest
 @testable import Color
 
@@ -61,6 +62,35 @@ final class ColorTests: XCTestCase {
 
     store.assert(
       .send(.apply)
+    )
+  }
+
+  func testPreviewSnapshot() {
+    assertSnapshot(
+      matching: ColorView_Previews.previews,
+      layout: .device(config: .iPhoneXr)
+    )
+  }
+
+  func testBlackColorSnapshot() {
+    assertSnapshot(
+      matching: ColorView(store: Store(
+        initialState: ColorState(rgb: RGBColor(0, 0, 0)),
+        reducer: .empty,
+        environment: ()
+      )),
+      layout: .device(config: .iPhoneXr)
+    )
+  }
+
+  func testWhiteColorSnapshot() {
+    assertSnapshot(
+      matching: ColorView(store: Store(
+        initialState: ColorState(rgb: RGBColor(1, 1, 1)),
+        reducer: .empty,
+        environment: ()
+      )),
+      layout: .device(config: .iPhoneXr)
     )
   }
 }

@@ -101,8 +101,8 @@ Every other Swift package library in the project depends on the `Common` library
 
 |Target|Kind|Description|
 |:--|:--|:--|
-|`Common`|library|Contains color picker screen.|
-|`CommonTests`|unit tests|Unit and snapshot tests of the color picker screen.|
+|`Color`|library|Contains color picker screen.|
+|`ColorTests`|unit tests|Unit and snapshot tests of the color picker screen.|
 
 This package is a feature module that contains a color picker screen in isolation from other modules.
 

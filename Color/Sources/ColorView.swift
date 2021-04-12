@@ -64,9 +64,6 @@ public struct ColorView: View {
         }
       }
     }
-    .onAppear {
-      ViewStore(store.stateless).send(.onAppear)
-    }
   }
 }
 

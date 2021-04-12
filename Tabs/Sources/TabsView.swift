@@ -55,18 +55,27 @@ public struct TabsView: View {
         state: \.color,
         action: TabsAction.color
       ))
+      .onAppear {
+        ViewStore(store.stateless).send(.color(.onAppear))
+      }
 
     case .shape:
       ShapeView(store: store.scope(
         state: \.shape,
         action: TabsAction.shape
       ))
+      .onAppear {
+        ViewStore(store.stateless).send(.shape(.onAppear))
+      }
 
     case .preview:
       PreviewView(store: store.scope(
         state: \.preview,
         action: TabsAction.preview
       ))
+      .onAppear {
+        ViewStore(store.stateless).send(.preview(.onAppear))
+      }
     }
   }
 }

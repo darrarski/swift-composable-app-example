@@ -56,9 +56,6 @@ public struct ShapeView: View {
       }
       .padding()
     }
-    .onAppear {
-      ViewStore(store.stateless).send(.onAppear)
-    }
   }
 }
 

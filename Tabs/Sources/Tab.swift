@@ -1,4 +1,4 @@
-public enum Tab: Int, CaseIterable {
+public enum Tab: Int, CaseIterable, Equatable {
   case color
   case shape
   case preview

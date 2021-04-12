@@ -8,5 +8,8 @@ public let shapeReducer = Reducer<ShapeState, ShapeAction, Void> { state, action
 
   case .apply:
     return .none
+
+  case .onAppear:
+    return .none
   }
 }

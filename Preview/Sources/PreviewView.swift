@@ -12,38 +12,43 @@ public struct PreviewView: View {
 
   public var body: some View {
     WithViewStore(store) { viewStore in
-      if let color = viewStore.color,
-         let shape = viewStore.shape {
-        VStack {
-          Group {
-            switch shape {
-            case .circle:
-              Circle()
+      Group {
+        if let color = viewStore.color,
+           let shape = viewStore.shape {
+          VStack {
+            Group {
+              switch shape {
+              case .circle:
+                Circle()
 
-            case .square:
-              Rectangle()
+              case .square:
+                Rectangle()
+              }
+            }
+            .aspectRatio(1, contentMode: .fit)
+            .padding()
+            .foregroundColor(Color(
+              .displayP3,
+              red: color.red,
+              green: color.green,
+              blue: color.blue,
+              opacity: 1
+            ))
+
+            Button(action: { viewStore.send(.reset) }) {
+              Text("Reset")
+                .padding()
             }
           }
-          .aspectRatio(1, contentMode: .fit)
-          .padding()
-          .foregroundColor(Color(
-            .displayP3,
-            red: color.red,
-            green: color.green,
-            blue: color.blue,
-            opacity: 1
-          ))
-
-          Button(action: { viewStore.send(.reset) }) {
-            Text("Reset")
-              .padding()
+        } else {
+          VStack {
+            Text("No preview").font(.title)
+            Text("Apply color and shape first")
           }
         }
-      } else {
-        VStack {
-          Text("No preview").font(.title)
-          Text("Apply color and shape first")
-        }
+      }
+      .onAppear {
+        viewStore.send(.onAppear)
       }
     }
   }

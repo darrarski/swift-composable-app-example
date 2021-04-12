@@ -63,6 +63,9 @@ public struct ColorView: View {
             .padding()
         }
       }
+      .onAppear {
+        viewStore.send(.onAppear)
+      }
     }
   }
 }

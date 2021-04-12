@@ -3,4 +3,5 @@ public enum ColorAction: Equatable {
   case didUpdateGreen(Double)
   case didUpdateBlue(Double)
   case apply
+  case onAppear
 }

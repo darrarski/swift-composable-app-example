@@ -6,5 +6,8 @@ public let previewReducer = Reducer<PreviewState, PreviewAction, Void> { state, 
     state.color = nil
     state.shape = nil
     return .none
+
+  case .onAppear:
+    return .none
   }
 }

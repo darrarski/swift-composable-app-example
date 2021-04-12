@@ -63,9 +63,9 @@ public struct ColorView: View {
             .padding()
         }
       }
-      .onAppear {
-        viewStore.send(.onAppear)
-      }
+    }
+    .onAppear {
+      ViewStore(store.stateless).send(.onAppear)
     }
   }
 }

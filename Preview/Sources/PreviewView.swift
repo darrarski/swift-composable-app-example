@@ -47,9 +47,9 @@ public struct PreviewView: View {
           }
         }
       }
-      .onAppear {
-        viewStore.send(.onAppear)
-      }
+    }
+    .onAppear {
+      ViewStore(store.stateless).send(.onAppear)
     }
   }
 }

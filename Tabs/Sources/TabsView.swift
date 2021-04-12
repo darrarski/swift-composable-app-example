@@ -12,7 +12,7 @@ public struct TabsView: View {
   let store: Store<TabsState, TabsAction>
 
   public var body: some View {
-    WithViewStore(store) { viewStore in
+    WithViewStore(store.scope(state: TabsViewState.init(state:))) { viewStore in
       TabView(selection: viewStore.binding(
         get: \.selectedTab,
         send: TabsAction.didSelectTab

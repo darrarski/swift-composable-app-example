@@ -12,7 +12,7 @@ public struct TabsView: View {
   let store: Store<TabsState, TabsAction>
 
   public var body: some View {
-    WithViewStore(store) { viewStore in
+    WithViewStore(store.scope(state: TabsViewState.init(state:))) { viewStore in
       TabView(selection: viewStore.binding(
         get: \.selectedTab,
         send: TabsAction.didSelectTab
@@ -55,18 +55,27 @@ public struct TabsView: View {
         state: \.color,
         action: TabsAction.color
       ))
+      .onAppear {
+        ViewStore(store.stateless).send(.color(.onAppear))
+      }
 
     case .shape:
       ShapeView(store: store.scope(
         state: \.shape,
         action: TabsAction.shape
       ))
+      .onAppear {
+        ViewStore(store.stateless).send(.shape(.onAppear))
+      }
 
     case .preview:
       PreviewView(store: store.scope(
         state: \.preview,
         action: TabsAction.preview
       ))
+      .onAppear {
+        ViewStore(store.stateless).send(.preview(.onAppear))
+      }
     }
   }
 }

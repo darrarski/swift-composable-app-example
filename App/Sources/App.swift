@@ -15,7 +15,7 @@ struct App: SwiftUI.App {
       shape: ShapeState(type: .square),
       preview: PreviewState()
     ),
-    reducer: tabsReducer,
+    reducer: tabsReducer.debug(),
     environment: ()
   )
 

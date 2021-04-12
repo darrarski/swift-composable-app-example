@@ -16,5 +16,8 @@ public let colorReducer = Reducer<ColorState, ColorAction, Void> { state, action
 
   case .apply:
     return .none
+
+  case .onAppear:
+    return .none
   }
 }
